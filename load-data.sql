@@ -13,7 +13,7 @@ GO
 
 INSERT INTO Hostel.RoomType (room_type_name,person_number) VALUES('single room',1)--1
 INSERT INTO Hostel.RoomType (room_type_name,person_number) VALUES('double room',2)--2
-INSERT INTO Hostel.RoomType (room_type_name,person_number) VALUES('four-bed room',4)--3
+INSERT INTO Hostel.RoomType (room_type_name,person_number) VALUES('four-beded room',4)--3
 GO
 
 INSERT INTO Hostel.RoomGender (gender_name,acronym) VALUES('Male','M')--1
@@ -772,3 +772,34 @@ GO
 --INSERT INTO Hostel.Reservation (room_id,person_id,pay_day,start_date,end_date,status) VALUES (9, 26, 28, '2020-08-28', NULL,'occupied')
 --INSERT INTO Hostel.Reservation (room_id,person_id,pay_day,start_date,end_date,status) VALUES (10, 27, 27, '2020-08-27','2020-08-29','vacant')
 --GO
+
+--szobaban meg nem lako ujonnan felvett emberek. reservation tablaba felvihetoek az ures szobakba. (ellenorzeshez)
+INSERT INTO Person.Person VALUES 
+(2, 'Bob', 'Marley', '418894WL', '361848274', '5628181963', 'Nine Mile', '1945-02-06', 'M', 'Jamaican')
+
+INSERT INTO Person.Person VALUES 
+(2, 'Daphne', 'Smith', '412194HK', '361848654', '5898181963', 'Los Angeles', '1988-02-06', 'F', 'American')
+
+INSERT INTO Person.Person VALUES 
+(2, 'Tom', 'Smith', '423194AF', '365748654', '5898981963', 'New York', '1989-01-22', 'M', 'American')
+
+INSERT INTO Person.Person VALUES 
+(1, 'Miriam', 'Brown', '223194SS', '365748664', '5898881963', 'London', '1954-05-12', 'F', 'British')
+
+INSERT INTO Person.Person VALUES 
+(1, 'Brad', 'Pitt', '223194BM', '369948664', '5898881173', 'Shawnee', '1963-12-18', 'M', 'American')
+
+INSERT INTO Person.Person VALUES 
+(1, 'Dean', 'Winchester', '418812FB', '361848544', '5624581963', 'Lawrence', '1979-01-24', 'M', 'American')
+
+INSERT INTO Person.Person VALUES 
+(1, 'Sam', 'Winchester', '476194FB', '478184865', '5893781963', 'Lawrence', '1983-05-02', 'M', 'American')
+
+INSERT INTO Person.Person VALUES 
+(2, 'Nicole', 'Kidman', '465194BN', '365733654', '5898981993', 'Honolulu', '1967-06-20', 'F', 'American')
+
+INSERT INTO Person.Person VALUES 
+(2, 'Amanda', 'Simon', '252194LS', '365743564', '589888113', 'Sydney', '1988-09-13', 'F', 'Australian')
+
+INSERT INTO Person.Person VALUES 
+(2, 'Sofie', 'Black', '223194BR', '365747164', '5899181253', 'Liverpool', '2000-10-06', 'F', 'British')

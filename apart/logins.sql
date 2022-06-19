@@ -1,68 +1,69 @@
 USE [master]
 GO
 
-DROP LOGIN [TestLogin1]
-DROP LOGIN [TestLogin2]
-DROP LOGIN [TestLogin3]
+DROP LOGIN AdminLogin
+DROP LOGIN ReceptionLogin
+DROP LOGIN SocialWorkLogin
 GO
 
 USE [KocsisHostel]
 GO
 
-DROP USER [TestUser1]
-DROP USER [TestUser2]
-DROP USER [TestUser3]
+DROP USER IF EXISTS AdminUser
+DROP USER IF EXISTS Receptionist
+DROP USER IF EXISTS SocialWorker
+
 GO
 
 --create login 1 with user (admin)
 USE [master]
 GO
-CREATE LOGIN [TestLogin1] WITH PASSWORD=N'12345', 
+CREATE LOGIN [AdminLogin] WITH PASSWORD=N'12345', 
 DEFAULT_DATABASE=[KocsisHostel]
 GO
-ALTER SERVER ROLE [sysadmin] ADD MEMBER [TestLogin1]
+ALTER SERVER ROLE [sysadmin] ADD MEMBER [AdminLogin]
 GO
 use [master];
 GO
 USE [KocsisHostel]
 GO
-CREATE USER [TestUser1] FOR LOGIN [TestLogin1]
+CREATE USER [AdminUser] FOR LOGIN [AdminLogin]
 GO
 
 --create login 2 with user
 USE [master]
 GO
-CREATE LOGIN [TestLogin2] WITH PASSWORD=N'54321', 
+CREATE LOGIN [ReceptionLogin] WITH PASSWORD=N'54321', 
 DEFAULT_DATABASE=[KocsisHostel]
 GO
 use [master];
 GO
 USE [KocsisHostel]
 GO
-CREATE USER [TestUser2] FOR LOGIN [TestLogin2]
+CREATE USER [Receptionist] FOR LOGIN [ReceptionLogin]
 GO
-ALTER ROLE [db_owner] ADD MEMBER [TestUser2]
+ALTER ROLE [db_owner] ADD MEMBER [Receptionist]
 GO
 
 --create login 3 with user
 USE [master]
 GO
-CREATE LOGIN [TestLogin3] WITH PASSWORD=N'13579', 
+CREATE LOGIN [SocialWorkLogin] WITH PASSWORD=N'13579', 
 DEFAULT_DATABASE=[KocsisHostel]
 GO
 use [master];
 GO
 USE [KocsisHostel]
 GO
-CREATE USER [TestUser3] FOR LOGIN [TestLogin3]
+CREATE USER [SocialWorker] FOR LOGIN [SocialWorkLogin]
 GO
 USE [KocsisHostel]
 GO
-ALTER ROLE [db_datareader] ADD MEMBER [TestUser3]
+ALTER ROLE [db_datareader] ADD MEMBER [SocialWorker]
 GO
 USE [KocsisHostel]
 GO
-ALTER ROLE [db_datawriter] ADD MEMBER [TestUser3]
+ALTER ROLE [db_datawriter] ADD MEMBER [SocialWorker]
 GO
 
 
