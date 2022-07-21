@@ -803,3 +803,19 @@ INSERT INTO Person.Person VALUES
 
 INSERT INTO Person.Person VALUES 
 (2, 'Sofie', 'Black', '223194BR', '365747164', '5899181253', 'Liverpool', '2000-10-06', 'F', 'British')
+
+--non-clustered indexes
+
+DROP INDEX IF EXISTS IX_Person_Name ON Person.Person
+GO
+
+CREATE NONCLUSTERED INDEX IX_Person_Name
+ON Person.Person (first_name) INCLUDE (last_name)
+GO
+
+DROP INDEX IF EXISTS IX_Room_roomnumber ON Hostel.Room
+GO
+
+CREATE NONCLUSTERED INDEX IX_Room_roomnumber
+ON Hostel.Room (room_number)
+GO

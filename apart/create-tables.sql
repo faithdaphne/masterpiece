@@ -149,7 +149,7 @@ CREATE TABLE Hostel.RoomGender
 (
 	gender_id INT IDENTITY (1, 1) CONSTRAINT PK_RoomGender PRIMARY KEY,
 	gender_name VARCHAR(10) NOT NULL,
-	acronym CHAR(1)
+	acronym CHAR(1) NOT NULL
 );
 
 CREATE TABLE Hostel.PriceTable 

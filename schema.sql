@@ -149,7 +149,7 @@ CREATE TABLE Hostel.RoomGender
 (
 	gender_id INT IDENTITY (1, 1) CONSTRAINT PK_RoomGender PRIMARY KEY,
 	gender_name VARCHAR(10) NOT NULL,
-	acronym CHAR(1)
+	acronym CHAR(1) NOT NULL
 );
 
 CREATE TABLE Hostel.PriceTable 
@@ -207,9 +207,9 @@ CREATE TABLE Hostel.Reservation
 USE [master]
 GO
 
-DROP LOGIN AdminLogin
-DROP LOGIN ReceptionLogin
-DROP LOGIN SocialWorkLogin
+DROP LOGIN IF EXISTS AdminLogin
+DROP LOGIN IF EXISTS ReceptionLogin
+DROP LOGIN IF EXISTS SocialWorkLogin
 GO
 
 USE [KocsisHostel]
